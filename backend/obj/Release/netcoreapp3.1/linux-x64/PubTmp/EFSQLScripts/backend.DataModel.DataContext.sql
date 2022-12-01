@@ -49,7 +49,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20221130153134_bpkb')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20221130153134_bpkb', N'3.0.0');
+    VALUES (N'20221130153134_bpkb', N'3.1.31');
 END;
 
 GO

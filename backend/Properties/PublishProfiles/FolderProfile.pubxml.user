@@ -8,9 +8,4 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>D:\PRibadi\Tes\publish_backend\backend</_PublishTargetUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <EFMigrations Include="backend.DataModel.DataContext">
-      <Value>MultipleActiveResultSets=true%3bData Source=172.28.48.1%3bInitial Catalog=bpkb%3bUser ID=sa%3bPassword=Sprint1234!%3bConnect Timeout=30</Value>
-    </EFMigrations>
-  </ItemGroup>
 </Project>

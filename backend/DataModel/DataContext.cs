@@ -15,7 +15,7 @@ namespace backend.DataModel
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=192.168.1.6;Database=bpkb;Integrated Security=False;User id=sa;Password=Sprint1234!;Connect Timeout=30;MultipleActiveResultSets=True;Encrypt=False;TrustServerCertificate=True;MultiSubnetFailover=False;");
+            optionsBuilder.UseSqlServer("Data Source=192.168.1.6;Database=bpkb;User id=sa;Password=Sprint1234!;Connect Timeout=30;MultipleActiveResultSets=True;TrustServerCertificate=True");
         }
 
 
