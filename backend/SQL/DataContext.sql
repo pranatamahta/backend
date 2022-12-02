@@ -54,3 +54,11 @@ END;
 
 GO
 
+USE [bpkb]
+GO
+INSERT [dbo].[ms_storage_location] ([location_id], [location_name]) VALUES (N'1', N'Jakarta')
+GO
+INSERT [dbo].[ms_storage_location] ([location_id], [location_name]) VALUES (N'2', N'Depok')
+GO
+INSERT [dbo].[ms_storage_location] ([location_id], [location_name]) VALUES (N'3', N'Bandung')
+GO
