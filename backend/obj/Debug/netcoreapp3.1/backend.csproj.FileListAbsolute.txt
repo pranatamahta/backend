@@ -1,6 +1,5 @@
 D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\appsettings.json
-D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\backend.exe
 D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\backend.deps.json
 D:\PRibadi\Tes\backend\backend\bin\Debug\netcoreapp3.1\backend.runtimeconfig.json
@@ -125,6 +124,14 @@ D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.AssemblyInfo.cs
 D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.RazorTargetAssemblyInfo.cache
 D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.csproj.CopyComplete
 D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\backend.StaticWebAssets.Manifest.cache
-D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\backend.StaticWebAssets.xml
 D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.dll
 D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.pdb
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.csproj.AssemblyReference.cache
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.csproj.CoreCompileInputs.cache
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\backend.genruntimeconfig.cache
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\backend.StaticWebAssets.Pack.cache
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.backend.props
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.backend.props
+D:\PRibadi\Tes\backend\backend\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.backend.props

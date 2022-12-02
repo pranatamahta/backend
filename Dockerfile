@@ -1,5 +1,5 @@
-﻿FROM  mcr.microsoft.com/dotnet/core/aspnet:3.1
-
+﻿#FROM  mcr.microsoft.com/dotnet/core/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 
 EXPOSE 80

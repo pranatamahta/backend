@@ -50,7 +50,6 @@ namespace backend.Controllers
                     faktur_date = bp.faktur_date,
                     location_id = bp.location_id,
                     police_no = bp.police_no,
-
                     bpkb_date_in = bp.bpkb_date_in
                 };
                 context.tr_bpkb.Add(std);
