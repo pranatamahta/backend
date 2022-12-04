@@ -12,54 +12,65 @@ namespace backend.Controllers
     [Route("[controller]")]
     public class ApiController : ControllerBase
     {
-
-
+        Response r = new Response();
         [HttpGet]
-        public IEnumerable<Location> Get()
+        public Response Get()
         {
             try
             {
                 var context = new DataContext();
-                var studentsWithSameName = context.ms_storage_location.ToArray();
-                return studentsWithSameName;
+                var studentsWithSameName = context.ms_storage_location.ToList();
+                
+                r.message = "sukses";
+                r.data = studentsWithSameName.ToList<Object>();
+                return r;
+                
             }
             catch (Exception ex)
             {
-                var rng = new Random();
-                return Enumerable.Range(1, 5).Select(index => new Location
-                {
-
-                    location_name = ex.Message.ToString()
-                })
-                .ToArray();
+                r.message = ex.Message;
+                
+                return r;
             }
         }
         [HttpPost("save")]
 
-        public String Save([FromBody] Bpkb bp)
+        public Response Save([FromBody] Bpkb bp)
         {
-            using (var context = new DataContext())
+            
+            try
             {
-                var std = new Bpkb()
+                using (var context = new DataContext())
                 {
-                    agreement_number = bp.agreement_number,
-                    bpkb_no = bp.bpkb_no,
-                    branch_id = bp.branch_id,
-                    bpkb_date = bp.bpkb_date,
-                    faktur_no = bp.faktur_no,
-                    faktur_date = bp.faktur_date,
-                    location_id = bp.location_id,
-                    police_no = bp.police_no,
-                    bpkb_date_in = bp.bpkb_date_in
-                };
-                context.tr_bpkb.Add(std);
+                    var std = new Bpkb()
+                    {
+                        agreement_number = bp.agreement_number,
+                        bpkb_no = bp.bpkb_no,
+                        branch_id = bp.branch_id,
+                        bpkb_date = bp.bpkb_date,
+                        faktur_no = bp.faktur_no,
+                        faktur_date = bp.faktur_date,
+                        location_id = bp.location_id,
+                        police_no = bp.police_no,
 
-                // or
-                // context.Add<Student>(std);
+                        bpkb_date_in = bp.bpkb_date_in
+                    };
+                    context.tr_bpkb.Add(std);
 
-                context.SaveChanges();
+                    // or
+                    // context.Add<Student>(std);
+
+                    context.SaveChanges();
+                    r.message = "sukses";
+                    r.data = new List<Object>() { std };
+                    return r;
+                }
+            }catch(Exception ex)
+            {
+                r.message = "Error: "+ex.Message;
+                return r;
             }
-            return "sukses";
+           
         }
     }
 }

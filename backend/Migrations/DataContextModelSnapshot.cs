@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend.DataModel;
 
+#nullable disable
+
 namespace backend.Migrations
 {
     [DbContext(typeof(DataContext))]
@@ -15,9 +17,10 @@ namespace backend.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.31")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "6.0.11")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("backend.Model.Bpkb", b =>
                 {
@@ -31,7 +34,8 @@ namespace backend.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("bpkb_no")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("no_bpkb");
 
                     b.Property<string>("branch_id")
                         .HasColumnType("nvarchar(max)");
@@ -42,13 +46,15 @@ namespace backend.Migrations
                     b.Property<string>("faktur_no")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("location_id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("location_id")
+                        .HasColumnType("int");
 
                     b.Property<string>("police_no")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("agreement_number");
+
+                    b.HasIndex("bpkb_no");
 
                     b.HasIndex("location_id");
 
@@ -57,13 +63,18 @@ namespace backend.Migrations
 
             modelBuilder.Entity("backend.Model.Location", b =>
                 {
-                    b.Property<string>("location_id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("location_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("location_id"), 1L, 1);
 
                     b.Property<string>("location_name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("location_id");
+
+                    b.HasIndex("location_name");
 
                     b.ToTable("ms_storage_location");
                 });
@@ -72,7 +83,11 @@ namespace backend.Migrations
                 {
                     b.HasOne("backend.Model.Location", "ms_storage_location")
                         .WithMany()
-                        .HasForeignKey("location_id");
+                        .HasForeignKey("location_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ms_storage_location");
                 });
 #pragma warning restore 612, 618
         }
